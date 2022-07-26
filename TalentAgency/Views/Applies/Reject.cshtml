@@ -1,0 +1,57 @@
+﻿@model TalentAgency.Models.Apply
+@{
+    ViewData["Title"] = "Reject";
+    Layout = "~/Views/Shared/_PLogedLayout.cshtml";
+}
+
+<h1>Reject</h1>
+
+
+<h3>Are you sure you want to Reject this talent?</h3>
+<div>
+    <h4>Talent and Event information</h4>
+    <hr />
+    <form asp-action="Reject">
+    <input type="hidden" asp-for="Apply_id" />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd class = "col-sm-10">
+             <input asp-for="email" class="form-control" />
+            
+        </dd>
+        <dt class = "col-sm-2">       
+            @Html.DisplayNameFor(model => model.Event_name)
+        </dt>
+        <dd class = "col-sm-10">
+             <input asp-for="Event_name" class="form-control" />
+            
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            <input asp-for="Status" class="form-control" />
+            
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Introduction)
+        </dt>
+        <dd class = "col-sm-10">
+            <textarea asp-for="Introduction" class="form-control"></textarea>
+           
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Date_created)
+        </dt>
+        <dd class = "col-sm-10">
+            <input asp-for="Date_created" class="form-control" />
+            
+        </dd>
+    </dl>
+        <input type="submit" value="Reject" class="btn btn-danger" /> 
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+

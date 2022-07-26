@@ -1,0 +1,54 @@
+﻿@model List<List<KeyValuePair<string, string>>>
+@{
+    ViewData["Title"] = "manageNews";
+    Layout = "~/Views/Shared/_PLogedLayout.cshtml";
+}
+@if(ViewBag.msg != "")
+{
+    <script> alert("@ViewBag.msg") </script>
+}
+<h1>manageNews</h1>
+
+<center>
+    <h1>News</h1>
+    <br /><hr /><br />
+    <select name="operators">
+            <option value="=" selected>Equal</option>
+            </select>
+    <form method="post" asp-action="manageNews">
+        <br /><br /> <input type="submit" name="submit" value="Click me" />
+        <br /><br />
+    </form>
+</center>
+
+<center>
+    @if(ViewBag.msg == "Data is found"){
+         <p>Number of the transaction found is /are : @Model.Count</p>
+        @foreach (var singleDocument in Model)
+        {
+            <div style="display:inline-block; background-color: lightblue; text-align:left;
+                            margin:10px 10px 10px 10px; padding:12px 12px 12px 12px">
+                @{
+                    string prodID = ""; string News_ID = "";
+                }
+                @foreach(var attributes in singleDocument)
+            {
+                <dt>@attributes.Key</dt>
+                    <dt>@attributes.Value</dt>
+
+                    if(attributes.Key == "ProducerName")
+                    {
+                        prodID = attributes.Value;
+                    }else if (attributes.Key == "NewsID"){
+                        News_ID = attributes.Value;
+                    }
+                }
+            <a asp-action="editdata" asp-route-prodID = "@prodID" asp-route-NewsID = "@News_ID"><button>Edit</button></a>
+            &nbsp;&nbsp;&nbsp;
+            <a asp-action="deletedata" asp-route-prodID = "@prodID" asp-route-NewsID = "@News_ID"><button>Delete</button></a>
+
+        </div>
+        }
+    }
+</center>
+

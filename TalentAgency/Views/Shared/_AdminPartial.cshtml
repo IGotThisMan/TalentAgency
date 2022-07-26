@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TalentAgency</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+     <!-- for icons -->
+    <link href="~/assets/plugins/fontawesome-free/css/fontawesome.css" rel="stylesheet">
+    <link href="~/assets/plugins/fontawesome-free/css/brands.css" rel="stylesheet">
+    <link href="~/assets/plugins/fontawesome-free/css/solid.css" rel="stylesheet">
+
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="~/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="~/assets/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/assets/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="~/assets/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/assets/plugins/summernote/summernote-bs4.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- Select2 css -->
+    <link rel="stylesheet" href="~/assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+
+    <link rel="icon" type="image/png" href="~/assets/img/crud_logo.png" />
+
+    <!-- jQuery -->
+    <script src="~/assets/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="~/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="~/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="~/assets/plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="~/assets/plugins/sparklines/sparkline.js"></script>
+
+    <!-- daterangepicker -->
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Select2 js -->
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="~/assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="~/assets/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="~/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- custom upload file script -->
+    <script src="~/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/assets/js/adminlte.js"></script>
+</head>
+
+<body>
+                <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+                    <a class="brand-link">
+                        <img src="~/assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                        <span class="brand-text font-weight-light">CafeEZ</span>
+                    </a>
+
+                    <div class="sidebar">
+
+                        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                            <div class="image">
+                                <img src="~/assets/img/Default_pfp.jpg" class="img-circle elevation-2" alt="User Image">
+                            </div>
+                            <div class="info">
+                                <a href="/Profile/User_Profile" class="d-block"></a>
+                            </div>
+                        </div>
+
+                        <nav class="mt-2">
+                            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                                <li class="nav-item menu-open">
+
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="/User_dashboard" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Dashboard</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>
+                                                    Orders
+                                                    <i class="fas fa-angle-left right"></i>
+                                                </p>
+                                            </a>
+                                            <ul class="nav nav-treeview" style="display: none;">
+                                                <li class="nav-item">
+                                                    <a href="/OrderList" class="nav-link">
+                                                        <i class="far fa-circle nav-icon"></i>
+                                                        <p>Current Orders</p>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="/OrderList/userOrderSummary" class="nav-link">
+                                                        <i class="far fa-circle nav-icon"></i>
+                                                        <p>Complete Orders</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/Feedbacks/Users_Complete_Order" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Provide Feedbacks</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                </aside>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - MVCFlowerShop_Lab6 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

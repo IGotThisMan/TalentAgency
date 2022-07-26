@@ -1,0 +1,75 @@
+﻿@model IEnumerable<TalentAgency.Models.Apply>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LogedLayout.cshtml";
+}
+@if(ViewBag.msg != "")
+{
+    <script> alert("@ViewBag.msg") </script>
+}
+<h1>Applied Status</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Introduction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_created)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Introduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_created)
+            </td>
+                @if (item.Status == "Accepted")
+                {
+                    <td style="color:forestgreen">
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                }
+                else if(item.Status == "Rejected")
+                {
+                    <td style="color:red">
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                }
+                else
+                {
+                   <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td> 
+                }
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.Apply_id">Cancel</a> 
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+

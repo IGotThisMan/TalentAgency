@@ -1,0 +1,55 @@
+﻿@model List<List<KeyValuePair<string, string>>>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LogedLayout.cshtml";
+}
+
+@if(ViewBag.msg != "")
+{
+    <script> alert("@ViewBag.msg") </script>
+}
+
+<center>
+    <h1>News</h1>
+    <br /><hr /><br />
+    <form method="post" asp-action="Index">
+         <select name="operators">
+            <option value="=" selected>Equal</option>
+            </select>
+        <label>Category:</label><select name="category" required>
+                    <option value="Photograph">Photograph</option>
+                    <option value="Acting">Acting</option>
+                    <option value="Model">Model</option>
+                </select>
+        <br /><br /> <input type="submit" name="submit" value="Search this category" />
+        <br /><br />
+    </form>
+</center>
+
+<center>
+    @if(ViewBag.msg == "Data is found"){
+         <p>Number of the transaction found is /are : @Model.Count</p>
+        <div class="row ml-5 pt-3">
+        @foreach (var singleDocument in Model)
+        {
+            <div class="col-auto">
+                <div class='card card-primary card-outline'>
+
+                @foreach(var attributes in singleDocument)
+            {
+                <div class="card-header">
+                <p style="font-weight:500">@attributes.Key</p>
+                </div>
+                    <div class="card-body">
+                    <p>@attributes.Value</p>
+                    </div>
+
+                }
+            </div>
+        </div>
+        }
+        </div>
+    }
+   
+</center>
+

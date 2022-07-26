@@ -1,0 +1,56 @@
+﻿@model TalentAgency.Areas.Identity.Data.TalentAgencyUser
+@{
+    ViewData["Title"] = "ShowProfile";
+    Layout = "~/Views/Shared/_PLogedLayout.cshtml";
+}
+
+<h1>Talent Profile</h1>
+
+ <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            <input asp-for="Email" class="form-control" disabled/>
+            
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.talent_lname)
+        </dt>
+        <dd class = "col-sm-10">
+             <input asp-for="talent_lname" class="form-control" disabled/>
+            
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.talent_fname)
+        </dt>
+        <dd class = "col-sm-10">
+            <input asp-for="talent_fname" class="form-control" disabled/>
+            
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+        <dd class = "col-sm-10">
+            <input asp-for="age" class="form-control" disabled>
+            
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.gender)
+        </dt>
+        <dd class = "col-sm-10">
+            <input asp-for="gender" class="form-control" disabled/>
+            
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            <input asp-for="PhoneNumber" class="form-control" disabled/>
+            
+        </dd>
+        </dl>
+        <br />
+        <br />
+        <a asp-action="Index">Back to List</a>
+    

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LogedLayout.cshtml";
+}
+
+@if(ViewBag.msg != "")
+{
+    <script>alert("@ViewBag.msg");</script>
+}
+
+<center>
+    <h1>Report a Bug</h1>
+    <br />
+    <hr />
+    <br />
+    <p>
+      
+    </p>
+    <form method="post" asp-action="sendMessage">
+        <p>Bug Description<p>
+        <textarea cols="50" rows="15" name="BugDesc" placeholder="describe what bug has been discovered" required></textarea>
+        <br />
+        <input type ="submit" name = "submit" value="Submit" />
+    </form>
+</center>
+

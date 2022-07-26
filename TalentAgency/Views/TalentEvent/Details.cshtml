@@ -1,0 +1,36 @@
+﻿@model TalentAgency.Models.Event
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LogedLayout.cshtml";
+}
+
+<center><h1>Application form</h1></center>
+
+
+<div class="row">
+    
+    <div class="col-md-4">
+        <form asp-action="Apply" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Event_name" />
+            <div class="form-group">
+                <p><label for="Introduction">Self Introduction:</label></p>
+                <br />
+                <textarea id="Introduction" name="Introduction" rows="4" cols="50"></textarea>       
+            </div>
+            <div class="form-group">
+                
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Event List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

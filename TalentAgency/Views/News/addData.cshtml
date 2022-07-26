@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "addData";
+    Layout = "~/Views/Shared/_PLogedLayout.cshtml";
+}
+
+@if(ViewBag.msg != "")
+{
+    <script> alert("@ViewBag.msg") </script>
+}
+
+<center>
+    <h1>Add new news</h1>
+    <br />
+    <br />
+    <form method="post" asp-action="addData">
+        <div style="background-color:lightcyan;margin-top:10px;margin-bottom:10px;padding:12px 12px 12px 12px">
+            <dt>News Title:</dt>
+            <dd><input type="text" name="N_Title" required /></dd>
+            <dt>Categories</dt>
+            <dd> <select name="N_Categories" required>
+                    <option value="Photograph" selected>Photograph</option>
+                    <option value="Acting">Acting</option>
+                    <option value="Model">Model</option>
+                </select>
+            </dd>
+            <dt>News Content </dt>
+            <dd><textarea input type="text" name="N_Content" rows="4" cols= "20" required /></textarea></dd>
+            <br/>
+            <div style="text-align:center">
+                <input type="submit" name="Submit" value="Add New News"/>
+            </div>
+                </div>
+    </form>
+
+    <a asp-action="Index">Back to List</a>
+
+</center>
+

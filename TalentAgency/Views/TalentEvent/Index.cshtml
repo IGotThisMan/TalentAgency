@@ -1,0 +1,29 @@
+﻿@model IEnumerable<TalentAgency.Models.Event>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LogedLayout.cshtml";
+}
+@if(ViewBag.msg != "")
+{
+    <script> alert("@ViewBag.msg") </script>
+}
+<center><h1>Search Event</h1></center>
+
+<div class="row ml-5 pt-3">
+    @foreach (var item in Model) {
+    <div class="col-auto">
+        <div class='card card-primary card-outline'>
+            <div class="card-header">
+                <h2>@Html.DisplayFor(modelItem => item.Event_name)</h2>
+                </div>
+            <div class="card-body">
+                <p>@Html.DisplayFor(modelItem => item.description)</p>
+                <button class="btn btn-primary"><a asp-action="Details" asp-route-id="@item.Event_name" style="color:#000000">Apply</a></button>
+            </div>
+            </div>
+    </div>
+    }           
+</div>
+
+
+

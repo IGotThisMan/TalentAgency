@@ -1,0 +1,58 @@
+﻿@model List<KeyValuePair<string,string>>
+@{
+    ViewData["Title"] = "editdata";
+    Layout = "~/Views/Shared/_PLogedLayout.cshtml";
+}
+
+<h1>editdata</h1>
+
+<center>
+    <h1>Edit Page:</h1><hr /><br />
+    <form method = "post" asp-action = "editdata">
+        <div style="background-color:lightcyan;padding:12px;">
+            @foreach(var attributes in Model)
+            {
+                <dt>@attributes.Key</dt>
+
+                if(attributes.Key == "ProducerName" || attributes.Key == "NewsID" ||attributes.Key == "N_Title")
+                {
+                    <dd>@attributes.Value</dd>
+                    <input type = "hidden" name = "@attributes.Key" value="@attributes.Value" min="1" max="30"/>
+
+                }else if(attributes.Key == "N_Content")
+                {
+                    <input type = "text" name = "@attributes.Key" value="@attributes.Value"/>
+
+                }else if (attributes.Key == "N_Categories")
+                {
+                    <select name = "@attributes.Key">
+                        @if (attributes.Value == "Photograph")
+                        {
+                            <option value="Photograph" selected>Photograph</option>
+                            <option value="Acting">Acting</option>
+                            <option value="Model">Model</option>
+                        }else if(attributes.Value == "Acting")
+                        {
+                            <option value="Photograph">Photograph</option>
+                            <option value="Acting" selected>Acting</option>
+                            <option value="Model">Model</option>
+                        }else{
+                            <option value="Photograph" selected>Photograph</option>
+                            <option value="Acting">Acting</option>
+                            <option value="Model" selected>Model</option>
+
+                        }
+
+                    </select>
+                }
+                else
+                {
+                    <input type = "text" name = "@attributes.Key" value = "@attributes.Value"/>
+                }
+               
+            }
+             <input type="submit" value="Edit" name="submit" />
+            </div>
+    </form>
+</center>
+

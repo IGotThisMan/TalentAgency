@@ -1,0 +1,52 @@
+﻿@model TalentAgency.Models.Apply
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LogedLayout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Apply</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Apply_id" />
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Event_name" class="control-label"></label>
+                <input asp-for="Event_name" class="form-control" />
+                <span asp-validation-for="Event_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Introduction" class="control-label"></label>
+                <textarea asp-for="Introduction" class="form-control"></textarea>
+                <span asp-validation-for="Introduction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date_created" class="control-label"></label>
+                <input asp-for="Date_created" class="form-control" />
+                <span asp-validation-for="Date_created" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
