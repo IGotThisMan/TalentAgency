@@ -56,7 +56,7 @@ namespace TalentAgency.Controllers
             var apply = await _context.Apply.FindAsync(id);
             _context.Apply.Remove(apply);
             await _context.SaveChangesAsync(); 
-            message = "You have cancel the applicant of events " + apply.Event_name;
+            message = "You have cancel the applicant of event " + apply.Event_name;
             return RedirectToAction("Index", "TalentApply", new { msg = message });
         }
     }
